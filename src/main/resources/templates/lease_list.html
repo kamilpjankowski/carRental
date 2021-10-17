@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http:///www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All lease</title>
+</head>
+
+<body>
+<div align="center">
+  <a href="addLease">Add new lease</a>
+  <h1>Lease list</h1>
+  <table border="1" cellpadding="5" style="border: black">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Client Id</th>
+      <th>Car Id</th>
+      <th>Cost</th>
+      <th>Completed</th>
+      <th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="lease : ${leaseList}">
+      <td th:text="${lease.id}">Id</td>
+      <td th:text="${lease.client.id}">Brand</td>
+      <td th:text="${lease.car.id}">Model</td>
+      <td th:text="${lease.cost}">Cost</td>
+      <td th:text="${lease.completed}">Status</td>
+      <td>
+        <a th:href="@{'/returnLease/' + ${lease.id}}">RETURN CAR</a>
+        &nbsp;&nbsp;&nbsp;
+        <a th:href="@{'/deleteLease/' + ${lease.id}}">DELETE LEASE</a>
+        &nbsp;&nbsp;&nbsp;
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
