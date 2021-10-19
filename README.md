@@ -1,7 +1,9 @@
 The project works on Spring with ThymeLeaf and MySQL database.
 In order to configure and start the program, we should create a new database called "rental" and fill the username and password 
 in /resources/application.properties to connect with database.
+
 We can access the html forms to CRUD going to localhost:8080/
+
 Controllers:
 /addClient - add new client
 /allCars - show all cars
